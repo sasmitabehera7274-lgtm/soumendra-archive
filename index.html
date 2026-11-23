@@ -12,7 +12,7 @@
 const SUPABASE_URL='https://github.com/sasmitabehera7274-lgtm/soumendra-archive/blob/main/index.html';
 const SUPABASE_ANON_KEY='sb_publishable_JW5bfbXTeJ4tlHA57ZPw3w_g-glkT5l';
 const sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
-let user=null,items=[],active='All';const $=id=>document.getElementById(id);unction msg(el,text){el.textContent=text;el.classList.add('show')}function clearMsg(el){el.textContent='';el.classList.remove('show')}
+let user=null,items=[],active='All';const $=id=>document.getElementById(id);function msg(el,text){el.textContent=text;el.classList.add('show')}function clearMsg(el){el.textContent='';el.classList.remove('show')}
 function showAuth(){ $('authPanel').style.display='block';$('app').style.display='none'}function showApp(){ $('authPanel').style.display='none';$('app').style.display='flex'}
 async function init(){const {data:{session}}=await sb.auth.getSession();if(session){user=session.user;showApp();await loadItems()}else showAuth()}
 $('authForm').addEventListener('submit',async e=>{e.preventDefault();clearMsg($('authStatus'));const {error}=await sb.auth.signInWithPassword({email:$('email').value,password:$('password').value});if(error)msg($('authStatus'),error.message);else{const {data:{user:u}}=await sb.auth.getUser();user=u;showApp();await loadItems()}});
