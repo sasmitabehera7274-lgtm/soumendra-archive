@@ -9,8 +9,8 @@
 <div class="modal" id="modal"><div class="box"><button class="close" id="close">×</button><h2>Add to your archive</h2><div id="modalStatus" class="status"></div><form id="itemForm" class="form"><label>Title<input id="title" required placeholder="Name this creation"></label><div class="row"><label>Category<select id="category"><option>Projects</option><option>PDF & Documents</option><option>YouTube Studio</option><option>Designs</option><option>Education</option><option>Ideas & Drafts</option><option>Archive</option></select></label><label>Tags<input id="tags" placeholder="school, logo, video"></label></div><label>Description<textarea id="description" rows="2" placeholder="Optional notes"></textarea></label><label>File<input id="file" type="file" required></label><div class="buttons"><button type="button" class="btn" id="cancel">Cancel</button><button type="submit" class="btn primary" id="save">Upload and save</button></div></form></div></div>
 <script>
 // Replace these two values with your Supabase Project URL and anon/public key.
-const SUPABASE_URL = "YOUR_SUPABASE_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+const SUPABASE_URL = "https://uvttiebdemfpneqyfxot.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_JW5bfbXTeJ4tlHA57ZPw3w_g-glkT5l";
 
 const sb = supabase.createClient(
   SUPABASE_URL,
